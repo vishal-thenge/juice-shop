@@ -14,8 +14,16 @@ jobs:
   fossa-scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: fossas/fossa-action@main # Use a specific version if locking is preferred
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+
+      - name: "Run FOSSA Scan"
+        uses: fossas/fossa-action@main # Use a specific version if locking is preferred
+        with:
+          api-key: ${{secrets.fossaApiKey}}
+
+      - name: "Run FOSSA Test"
+        uses: fossas/fossa-action@main # Use a specific version if locking is preferred
         with:
           api-key: ${{secrets.fossaApiKey}}
           run-tests: true
