@@ -33,3 +33,6 @@ jobs:
             echo "Inside CLI"
             curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install-latest.sh | sudo bash
             fossa analyze
+            with:
+              api-key: ${{secrets.fossaApiKey}}
+
