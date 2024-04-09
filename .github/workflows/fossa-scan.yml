@@ -13,6 +13,9 @@ permissions:
 jobs:
   fossa-scan:
     runs-on: ubuntu-latest
+    env:
+      FOSSA_API_KEY: ${{secrets.FOSSA_API_KEY}}
+
     steps:
       - name: "Checkout Code"
         uses: actions/checkout@v3
@@ -32,7 +35,7 @@ jobs:
         run: |
             echo "Inside CLI"
             curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install-latest.sh | sudo bash
-            fossa analyze
+            fossa analyze --project-name 'test' --debug --release
             with:
               api-key: ${{secrets.fossaApiKey}}
 
