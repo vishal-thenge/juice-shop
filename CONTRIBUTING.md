@@ -12,6 +12,7 @@
 
 The minimum requirements for code contributions are:
 
+
 1. The code _must_ be compliant with the
    [JS Standard Code Style rules](http://standardjs.com) or their
    correspondingly configured TSLint rules.
