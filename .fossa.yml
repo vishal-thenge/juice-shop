@@ -1,0 +1,27 @@
+version: 3
+
+server: https://app.fossa.com
+apiKey: a1b2c3
+
+project:
+  locator: git+github.com/vishal-thenge/juice-shop
+  id: git+github.com/vishal-thenge/juice-shop
+  name: juice-shop
+  team: cli-team
+  teams: 
+    - cli-team-1
+    - cli-team-2
+  
+targets:
+  only:
+    - type: maven
+      path: foo/bar
+  exclude:
+    - type: bundler
+
+paths:
+  only:
+    - ./vendor/django
+    - ./test
+  exclude:
+    - ./vendor/django/test
