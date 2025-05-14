@@ -9,7 +9,7 @@ project:
   name: juice-shop
   team: cli-team
   teams: 
-    - cli-team-1
+    - Cloudera
     - cli-team-2
   
 targets:
